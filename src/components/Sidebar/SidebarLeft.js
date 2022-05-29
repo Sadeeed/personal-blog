@@ -2,9 +2,7 @@ import {
   Archive,
   BrandGithub,
   BrandTwitter,
-  Edit,
   Home,
-  Language,
   Search,
   ToggleLeft,
   ToggleRight,
@@ -17,6 +15,8 @@ import { Link, useLocation } from "react-router-dom";
 
 import default_avatar from "../../assets/images/avatars/avatar_default.png";
 import user_avatar from "../../assets/images/avatars/avatar_sadeed.jpg";
+
+import menu_default from "../../assets/js/main.js"
 
 
 function toggleDarkMode(){
@@ -37,6 +37,7 @@ const SidebarLeft = (props) => {
         type="button"
         id="toggle-menu"
         aria-label="Toggle Menu"
+        onClick={menu_default}
       >
         <span className="hamburger-box">
           <span className="hamburger-inner" />
