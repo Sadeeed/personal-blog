@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.css"
 import "./assets/css/css2.css";
 import "./assets/css/style.css";
 import AboutPage from "./views/About/AboutPage";
