@@ -4,7 +4,7 @@ var slideUp = (target, duration = 500) => {
   target.style.transitionProperty = "height, margin, padding";
   target.style.transitionDuration = duration + "ms";
   target.style.height = target.offsetHeight + "px";
-  target.offsetHeight;
+  // target.offsetHeight;
   target.style.overflow = "hidden";
   target.style.height = "0";
   target.style.paddingTop = "0";
@@ -35,7 +35,7 @@ var slideDown = (target, duration = 500) => {
   target.style.paddingBottom = "0";
   target.style.marginTop = "0";
   target.style.marginBottom = "0";
-  target.offsetHeight;
+  // target.offsetHeight;
   target.style.transitionProperty = "height, margin, padding";
   target.style.transitionDuration = duration + "ms";
   target.style.height = height + "px";
