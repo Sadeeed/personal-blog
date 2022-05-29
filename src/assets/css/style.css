@@ -2132,12 +2132,13 @@ a.link:hover {
 
 .wmde-markdown {
   background-color: var(--card-background) !important;
+  box-shadow: var(--shadow-l1) !important;
   font-family: var(--article-font-family) !important;
   color: var(--card-text-color-main) !important;
 }
 
 .submit-button {
-  color: var(--card-text-color-main) !important;
+  color: var(--accent-color-text) !important;
   background-color: #8ea885 !important;
   padding: 8px 16px !important;
   border-radius: var(--tag-border-radius) !important;
@@ -2152,7 +2153,7 @@ a.link:hover {
 }
 
 .edit-button {
-  color: var(--card-text-color-main) !important;
+  color: var(--accent-color-text) !important;
   background-color: #0177b8 !important;
   padding: 8px 16px !important;
   border-radius: var(--tag-border-radius) !important;
