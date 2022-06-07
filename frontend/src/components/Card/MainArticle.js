@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CalendarTime, Clock, Copyright } from "tabler-icons-react";
 import c1 from "../../assets/images/card-header.jpg";
 
@@ -10,11 +10,14 @@ const MainArticle = (props) => {
     return time;
   }
 
+  const location = useLocation();
+  const path = location.pathname;
+
   return (
     <article className="has-image main-article">
       <header className="article-header">
         <div className="article-image">
-          <Link to="/p/placeholder-text/">
+          <Link to={path} state={props.data}>
             <img src={c1} alt="" width={800} height={533} />
           </Link>
         </div>
@@ -32,7 +35,7 @@ const MainArticle = (props) => {
           </header>
           <div className="article-title-wrapper">
             <h2 className="article-title">
-              <Link to="/p/placeholder-text/">{props.title}</Link>
+              <Link to={path} state={props.data}>{props.title}</Link>
             </h2>
             <h3 className="article-subtitle">{props.subtitle}</h3>
           </div>

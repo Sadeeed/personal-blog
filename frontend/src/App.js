@@ -8,9 +8,11 @@ import EditPage from "./views/Edit/EditPage";
 import LandingPage from "./views/LandingPage/LandingPage";
 import PostPage from "./views/Post/PostPage";
 import SearchPage from "./views/Search/SearchPage";
-import SignUp from "./views/SignUpPage/SignUp";
+import SignUp from "./views/Registration/SignUp";
 import Dashboard from "./views/Dashboard/Dashboard";
 import { useEffect } from "react";
+import NewPage from "./views/New/NewPage";
+import Login from "./views/Registration/Login";
 
 function App() {
   useEffect(() => {
@@ -30,6 +32,8 @@ function App() {
       <Route path="/search" element={<SearchPage />} />
       <Route path="/p/:slug" element={<PostPage />} />
       <Route path="/e/:slug" element={<EditPage />} />
+      <Route path="/n" element={<NewPage />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/dashboard" element={<Dashboard />} />
     </Routes>

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Footer from "../../components/Footer/Footer";
-import SignupForm from "../../components/Forms/SignupForm";
+import LoginForm from "../../components/Forms/LoginForm";
 import SidebarLeft from "../../components/Sidebar/SidebarLeft";
 
-class SignUp extends Component {
+class Login extends Component {
   state = {};
 
   render() {
@@ -12,7 +12,7 @@ class SignUp extends Component {
         <div className="container main-container flex on-phone--column extended">
           <SidebarLeft />
           <main className="main full-width">
-            <SignupForm />
+            <LoginForm />
             <Footer />
           </main>
         </div>
@@ -21,4 +21,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default Login;

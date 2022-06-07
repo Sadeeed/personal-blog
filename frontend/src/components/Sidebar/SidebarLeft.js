@@ -3,13 +3,13 @@ import {
   BrandGithub,
   BrandTwitter,
   Home,
+  Login,
+  Plus,
   Search,
   ToggleLeft,
   ToggleRight,
   User,
 } from "tabler-icons-react";
-
-import { default as TablerLink } from "tabler-icons-react/dist/icons/link";
 
 import { Link, useLocation } from "react-router-dom";
 
@@ -118,10 +118,16 @@ const SidebarLeft = (props) => {
             <span>Search</span>
           </Link>
         </li>
-        <li className={path === "/signup/" ? "current" : ""}>
-          <Link to="/signup/">
-            <TablerLink size={24} strokeWidth={2} />
-            <span>Signup</span>
+        <li className={path === "/login/" ? "current" : ""}>
+          <Link to="/login/">
+            <Login size={24} strokeWidth={2} />
+            <span>Login</span>
+          </Link>
+        </li>
+        <li className={path === "/n/" ? "current" : ""}>
+          <Link to="/n/">
+            <Plus size={24} strokeWidth={2} />
+            <span>New</span>
           </Link>
         </li>
         <div className="menu-bottom-section">

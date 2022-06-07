@@ -5,18 +5,18 @@ import Footer from "../../components/Footer/Footer";
 import SidebarLeft from "../../components/Sidebar/SidebarLeft";
 import Button from "../../components/Buttons/Button";
 import { useLocation } from "react-router-dom";
-import { editPost } from "../../service/api.js"
+import { addPost } from "../../service/api.js"
 
-const EditPage = (props) => {
-  const location = useLocation();
-  const article = location.state;
-  const [value, setValue] = useState(article.subtitle);
+const NewPage = (props) => {
+  // const location = useLocation();
+  // const article = location.state;
+  const [value, setValue] = useState();
 
-  const edit_link = `/e/${article.slug}`
+  // const create_link = `/n/${article.slug}`
 
   async function handleOnClick() {
     setValue(value)
-    await editPost(value, edit_link);
+    await addPost(value);
   }
 
   return (
@@ -44,4 +44,4 @@ const EditPage = (props) => {
   );
 };
 
-export default EditPage;
+export default NewPage;

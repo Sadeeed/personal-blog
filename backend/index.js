@@ -3,6 +3,7 @@ import express from "express"
 import mongoose from "mongoose"
 import cors from "cors"
 import articleRouter from "./routes/articleRoutes.js"
+import authRouter from "./routes/authRoutes.js"
 
 const app = express()
 const port = 5000
@@ -22,6 +23,7 @@ app.use(bodyParser.json({extended: true}))
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.use('/api', articleRouter)
+app.use('/api/auth', authRouter)
 
 // app.get('/', (req, res) => {
 //   res.send(`Hello World!`)
