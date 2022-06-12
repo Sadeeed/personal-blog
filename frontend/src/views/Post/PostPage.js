@@ -20,7 +20,7 @@ const PostPage = (props) => {
             title={article.title}
             subtitle={article.subtitle}
             published={article.created}
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum ligula et lacinia vestibulum. Quisque nec libero elit. Curabitur rhoncus finibus ipsum, ac pharetra nunc fringilla ac. Etiam eget enim et arcu ornare scelerisque ut quis dolor. Mauris vitae euismod ipsum, quis dictum tortor. Integer accumsan, metus et consectetur scelerisque, leo odio malesuada lorem, a tempor lectus leo eu enim. Nullam consectetur cursus turpis, id placerat dolor vulputate in. "
+            content={article.content}
           />
           <Link className="edit-button" to={edit_link} state={article}>Edit</Link>
           <Footer />

@@ -1,5 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { CalendarTime, Clock, Copyright } from "tabler-icons-react";
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import c1 from "../../assets/images/card-header.jpg";
 
 const MainArticle = (props) => {
@@ -35,7 +37,9 @@ const MainArticle = (props) => {
           </header>
           <div className="article-title-wrapper">
             <h2 className="article-title">
-              <Link to={path} state={props.data}>{props.title}</Link>
+              <Link to={path} state={props.data}>
+                {props.title}
+              </Link>
             </h2>
             <h3 className="article-subtitle">{props.subtitle}</h3>
           </div>
@@ -54,7 +58,8 @@ const MainArticle = (props) => {
         </div>
       </header>
       <section className="article-content">
-        <h1>Hello World</h1>
+        <ReactMarkdown children={props.content} remarkPlugins={[remarkGfm]} />
+        {/* <h1>Hello World</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum
           ligula et lacinia vestibulum. Quisque nec libero elit. Curabitur
@@ -73,7 +78,7 @@ const MainArticle = (props) => {
           quis dictum tortor. Integer accumsan, metus et consectetur
           scelerisque, leo odio malesuada lorem, a tempor lectus leo eu enim.
           Nullam consectetur cursus turpis, id placerat dolor vulputate in.
-        </p>
+  </p> */}
       </section>
       <footer className="article-footer">
         <section className="article-tags">

@@ -2128,6 +2128,7 @@ a.link:hover {
   background-color: var(--card-background) !important;
   font-family: var(--article-font-family) !important;
   color: var(--card-text-color-main) !important;
+  margin-top: -40px !important;
 }
 
 .wmde-markdown {
@@ -2161,4 +2162,33 @@ a.link:hover {
   font-size: 1.4rem !important;
   width: 80px !important;
   text-align: center;
+}
+
+/* Form Styling */
+
+.post-form {
+  position: relative;
+  --button-size: 80px;
+}
+
+.post-form input {
+  padding: 10px 10px 10px !important;
+  border-radius: 3px !important;
+  background-color: var(--card-background) !important;
+  box-shadow: var(--shadow-l1) !important;
+  color: var(--card-text-color-main) !important;
+  width: 100% !important;
+  border: 0 !important;
+  -webkit-appearance: none !important;
+  transition: box-shadow 0.3s ease !important;
+  font-size: 1.8rem !important;
+  margin-bottom: 16px;
+}
+
+.post-form label {
+  position: absolute !important;
+  top: 15px !important;
+  inset-inline-start: 20px !important;
+  font-size: 1.4rem !important;
+  color: var(--card-text-color-tertiary) !important;
 }

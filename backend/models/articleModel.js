@@ -9,6 +9,6 @@ const articleSchema = mongoose.Schema({
   created: Date,
 });
 
-articleModel = mongoose.model("article", articleSchema);
+const articleModel = mongoose.model("article", articleSchema);
 
 export default articleModel;

@@ -5,6 +5,10 @@ const url = "http://localhost:5000/api"
 
 axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('jwt')}`;
 
+export const getPosts = async () => {
+    return await axios.get(`${url}/`)
+}
+
 export const addPost = async (article) => {
     return await axios.post(`${url}/n`, article)
 }
