@@ -16,8 +16,8 @@ export const newPost = (req, res) => {
 
   const article = new articleModel(req.body)
   article.save()
-
   console.log("article " , req.body.title, "saved..")
+  res.send()
 };
 
 export const editPost = (req, res) => {
@@ -29,3 +29,11 @@ export const editPost = (req, res) => {
     console.log("article " , data.title, "updated..")
   })
 };
+
+export const deletePost = (req, res) => {
+  articleModel.deleteOne({slug:req.body.slug}).exec((err, data) => {
+    if (err) throw err
+    console.log("article" , data, "deleted..")
+    res.json(data)
+  })
+}

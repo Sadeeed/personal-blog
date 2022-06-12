@@ -59,26 +59,6 @@ const MainArticle = (props) => {
       </header>
       <section className="article-content">
         <ReactMarkdown children={props.content} remarkPlugins={[remarkGfm]} />
-        {/* <h1>Hello World</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum
-          ligula et lacinia vestibulum. Quisque nec libero elit. Curabitur
-          rhoncus finibus ipsum, ac pharetra nunc fringilla ac. Etiam eget enim
-          et arcu ornare scelerisque ut quis dolor. Mauris vitae euismod ipsum,
-          quis dictum tortor. Integer accumsan, metus et consectetur
-          scelerisque, leo odio malesuada lorem, a tempor lectus leo eu enim.
-          Nullam consectetur cursus turpis, id placerat dolor vulputate in.{" "}
-        </p>
-        <h2>Another Paragraph</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum
-          ligula et lacinia vestibulum. Quisque nec libero elit. Curabitur
-          rhoncus finibus ipsum, ac pharetra nunc fringilla ac. Etiam eget enim
-          et arcu ornare scelerisque ut quis dolor. Mauris vitae euismod ipsum,
-          quis dictum tortor. Integer accumsan, metus et consectetur
-          scelerisque, leo odio malesuada lorem, a tempor lectus leo eu enim.
-          Nullam consectetur cursus turpis, id placerat dolor vulputate in.
-  </p> */}
       </section>
       <footer className="article-footer">
         <section className="article-tags">

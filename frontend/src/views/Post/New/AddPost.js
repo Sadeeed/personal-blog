@@ -4,7 +4,7 @@ import rehypeSanitize from "rehype-sanitize";
 import Footer from "../../../components/Footer/Footer";
 import SidebarLeft from "../../../components/Sidebar/SidebarLeft";
 import Button from "../../../components/Buttons/Button";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { addPost } from "../../../service/api.js";
 
 const AddPost = (props) => {
@@ -15,6 +15,7 @@ const AddPost = (props) => {
   const [value, setValue] = useState();
 
   // const create_link = `/n/${article.slug}`
+  const navigate = useNavigate();
 
   async function handleOnClick() {
     const post = {
@@ -22,7 +23,11 @@ const AddPost = (props) => {
       subtitle: subtitle,
       content: value,
     };
-    await addPost(post);
+    await addPost(post).then((res) => {
+      if (res.status == 200) {
+        navigate("/");
+      }
+    });
   }
 
   return (

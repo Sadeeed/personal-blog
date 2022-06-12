@@ -17,6 +17,10 @@ export const editPost = async (article, path) => {
     return await axios.post(`${url}/e`, article)
 }
 
+export const deletePost = async (article) => {
+    return await axios.post(`${url}/d`, article)
+}
+
 export const userLogin = async (userData) => {
     return await axios.post(`${url}/auth/login`, userData)
 }
