@@ -5,11 +5,16 @@ import { userRegister } from "../../service/api";
 const SignupForm2 = (props) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [token, setToken] = useState();
 
   async function onClickHandler(e) {
     e.preventDefault()
     const userData = { email: email, password: password };
-    userRegister(userData).then((response) => alert(JSON.stringify(response.data)));
+    userRegister(userData).then((response) => {
+      // alert(JSON.stringify(response.data));
+      setToken(JSON.stringify(response.data.token));
+      localStorage.setItem("jwt", token);
+    });
   }
 
   return (

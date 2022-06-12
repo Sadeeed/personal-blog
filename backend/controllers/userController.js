@@ -14,8 +14,11 @@ export const createUser = (req, res) => {
 // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwicGFzc3dvcmQiOiIxNDI1NTN3MjY1MyIsImlhdCI6MTY1NDYzMjA3OH0.aaaThZL1aB667uWyVCdRIEJX0grbqP0oZfhAl7oWMUo
 
 export const loginUser = (req, res) => {
-  const token = req.body.token;
-  userModel.findOne(req.body, (err, user) => {
+  const header = req.headers.authorization
+  const token = header.split(' ')[1]
+  console.log(req.headers)
+  const email = req.body.email;
+  userModel.findOne(email, (err, user) => {
     if (err) {
       res.send(err);
     } else {

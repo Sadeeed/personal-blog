@@ -3,6 +3,8 @@ import axios from "axios"
 
 const url = "http://localhost:5000/api"
 
+axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('jwt')}`;
+
 export const addPost = async (article) => {
     return await axios.post(`${url}/n`, article)
 }

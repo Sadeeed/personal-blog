@@ -3,11 +3,13 @@ import { Container, Form, Button } from "react-bootstrap";
 import { userLogin } from "../../service/api";
 
 const LoginForm = (props) => {
-  const [token, setToken] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  // const [token, setToken] = useState();
 
   async function onClickHandler(e) {
-    e.preventDefault()
-    const userData = { token: token };
+    e.preventDefault();
+    const userData = { email: email, password: password };
     userLogin(userData).then((response) => alert(JSON.stringify(response.data)));
   }
 
@@ -24,12 +26,19 @@ const LoginForm = (props) => {
         <Form method="POST">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
-              type="text"
-              placeholder="Enter your Json Web Token"
-              onChange={(e) => setToken(e.target.value)}
+              type="email"
+              placeholder="Enter email"
+              onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
 
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Form.Group>
           <Button variant="primary" type="submit" onClick={onClickHandler}>
             Submit
           </Button>
