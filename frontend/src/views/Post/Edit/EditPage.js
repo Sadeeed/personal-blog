@@ -4,7 +4,7 @@ import rehypeSanitize from "rehype-sanitize";
 import Footer from "../../../components/Footer/Footer";
 import SidebarLeft from "../../../components/Sidebar/SidebarLeft";
 import Button from "../../../components/Buttons/Button";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { editPost } from "../../../service/api.js";
 
 const EditPage = (props) => {
@@ -15,6 +15,7 @@ const EditPage = (props) => {
   const [value, setValue] = useState(article.content);
 
   const edit_link = `/e/${article.slug}`;
+  const navigate = useNavigate();
 
   async function handleOnClick() {
     const updatedPost = {
@@ -23,8 +24,12 @@ const EditPage = (props) => {
       subtitle: subtitle,
       content: value,
     };
-    
-    await editPost(updatedPost, edit_link);
+
+    await editPost(updatedPost, edit_link).then((res) => {
+      if (res.status === 200) {
+        navigate(-1);
+      }
+    });
   }
 
   return (

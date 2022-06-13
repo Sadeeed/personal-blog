@@ -13,12 +13,12 @@ export const addPost = async (article) => {
     return await axios.post(`${url}/n`, article)
 }
 
-export const editPost = async (article, path) => {
-    return await axios.post(`${url}/e`, article)
+export const editPost = async (article) => {
+    return await axios.put(`${url}/e/${article.slug}`, article)
 }
 
 export const deletePost = async (article) => {
-    return await axios.post(`${url}/d`, article)
+    return await axios.delete(`${url}/d/${article.slug}`, article)
 }
 
 export const userLogin = async (userData) => {

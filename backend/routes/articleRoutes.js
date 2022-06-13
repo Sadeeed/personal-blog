@@ -7,8 +7,8 @@ router.get("/", getPosts)
 
 router.post("/n", newPost)
 
-router.post("/e", editPost)
+router.put("/e/:slug", editPost)
 
-router.post("/d", deletePost)
+router.delete("/d/:slug", deletePost)
 
 export default router

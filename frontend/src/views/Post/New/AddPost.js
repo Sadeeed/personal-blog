@@ -24,7 +24,7 @@ const AddPost = (props) => {
       content: value,
     };
     await addPost(post).then((res) => {
-      if (res.status == 200) {
+      if (res.status === 200) {
         navigate("/");
       }
     });
