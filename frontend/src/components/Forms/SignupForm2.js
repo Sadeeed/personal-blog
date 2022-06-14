@@ -4,14 +4,16 @@ import { userRegister } from "../../service/api";
 
 const SignupForm2 = (props) => {
   const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState({
+    password: '',
+    password2: ''
+  });
   const [token, setToken] = useState();
 
   async function onClickHandler(e) {
-    e.preventDefault()
+    e.preventDefault();
     const userData = { email: email, password: password };
     userRegister(userData).then((response) => {
-      // alert(JSON.stringify(response.data));
       setToken(JSON.stringify(response.data.token));
       localStorage.setItem("jwt", token);
     });
@@ -27,10 +29,11 @@ const SignupForm2 = (props) => {
         </div>
       </header>
       <Container className="p-5">
-        <Form method="POST">
+        <Form method="POST" className="auth-form">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
               type="email"
+              name="email"
               placeholder="Enter email"
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -39,8 +42,15 @@ const SignupForm2 = (props) => {
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Control
               type="password"
+              name="password"
               placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setPassword({...password, password:e.target.value})}
+            />
+            <Form.Control
+              type="password"
+              name="password2"
+              placeholder="Confirm Password"
+              onChange={(e) => setPassword({...password ,password2:e.target.value})}
             />
           </Form.Group>
           <Button variant="primary" type="submit" onClick={onClickHandler}>

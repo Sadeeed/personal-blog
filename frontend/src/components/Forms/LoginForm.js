@@ -23,7 +23,7 @@ const LoginForm = (props) => {
         </div>
       </header>
       <Container className="p-5">
-        <Form method="POST">
+        <Form method="POST" className="auth-form">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
               type="email"
@@ -39,7 +39,7 @@ const LoginForm = (props) => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-          <Button variant="primary" type="submit" onClick={onClickHandler}>
+          <Button variant="primary" type="submit" onClick={onClickHandler} className="submit-button">
             Submit
           </Button>
         </Form>

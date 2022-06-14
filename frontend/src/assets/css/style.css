@@ -2204,3 +2204,33 @@ a.link:hover {
   font-size: 1.4rem !important;
   color: var(--card-text-color-tertiary) !important;
 }
+
+/* Auth Forms */
+
+.auth-form {
+  position: relative;
+  --button-size: 80px;
+}
+
+.auth-form input {
+  padding: 10px 10px 10px !important;
+  border-radius: 3px !important;
+  background-color: var(--card-background) !important;
+  box-shadow: var(--shadow-l1) !important;
+  color: var(--card-text-color-main) !important;
+  width: 100% !important;
+  /* border: 0 !important;
+  border-color: white !important; */
+  -webkit-appearance: none !important;
+  transition: box-shadow 0.3s ease !important;
+  font-size: 1.8rem !important;
+  margin-bottom: 16px;
+}
+
+.auth-form label {
+  position: absolute !important;
+  top: 15px !important;
+  inset-inline-start: 20px !important;
+  font-size: 1.4rem !important;
+  color: var(--card-text-color-tertiary) !important;
+}
