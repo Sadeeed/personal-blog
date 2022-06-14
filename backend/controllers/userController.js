@@ -1,33 +1,36 @@
 import jwt from "jsonwebtoken";
 import userModel from "../models/userModel.js";
-
-// TODO
+import { cfg } from "../config.js";
 
 export const createUser = (req, res) => {
-  const token = jwt.sign(req.body, "hello");
-  const user = new userModel(req.body);
-  user.token = token;
-  user.save();
-  res.send({ success: 200, token: token });
+  userModel.register(
+    new userModel({ email: req.body.email, username: req.body.username }),
+    req.body.password.password,
+    (err, account) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send();
+      }
+    }
+  );
 };
 
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwicGFzc3dvcmQiOiIxNDI1NTN3MjY1MyIsImlhdCI6MTY1NDYzMjA3OH0.aaaThZL1aB667uWyVCdRIEJX0grbqP0oZfhAl7oWMUo
-
 export const loginUser = (req, res) => {
-  const header = req.headers.authorization
-  const token = header.split(' ')[1]
-  console.log(req.headers)
-  const email = req.body.email;
-  userModel.findOne(email, (err, user) => {
+  const username = req.body.username;
+  userModel.findOne({username: username}).exec((err, user) => {
     if (err) {
       res.send(err);
     } else {
-      const decoded = jwt.verify(token, "hello");
-      if (decoded.password == user.password) {
-        res.send({ message: "Welcome back" });
-      } else {
-        res.send({ message: "Token expired" });
-      }
+      var payload = {
+        id: user.id,
+        exp: Date.now() + 1000 * 60 * 60 * 24 * 7, //7 days
+      };
+      var token = jwt.sign(payload, cfg.jwtSecret);
+      res.json({
+        status: 200,
+        token: token,
+      });
     }
   });
 };

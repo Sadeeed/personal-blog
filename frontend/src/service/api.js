@@ -3,7 +3,9 @@ import axios from "axios"
 
 const url = "http://localhost:5000/api"
 
-axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('jwt')}`;
+export const setToken = (token) => {
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+}
 
 export const getPosts = async () => {
     return await axios.get(`${url}/`)

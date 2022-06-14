@@ -1,21 +1,25 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { userRegister } from "../../service/api";
+import { useNavigate } from "react-router-dom";
 
 const SignupForm2 = (props) => {
   const [email, setEmail] = useState();
+  const [username, setUsername] = useState();
   const [password, setPassword] = useState({
-    password: '',
-    password2: ''
+    password: "",
+    password2: "",
   });
-  const [token, setToken] = useState();
+  const navigate = useNavigate();
 
   async function onClickHandler(e) {
     e.preventDefault();
-    const userData = { email: email, password: password };
-    userRegister(userData).then((response) => {
-      setToken(JSON.stringify(response.data.token));
-      localStorage.setItem("jwt", token);
+    const userData = { email: email, username: username, password: password };
+    userRegister(userData).then((res) => {
+      console.log(res);
+      if (res.status === 200) {
+        navigate("/");
+      }
     });
   }
 
@@ -37,6 +41,12 @@ const SignupForm2 = (props) => {
               placeholder="Enter email"
               onChange={(e) => setEmail(e.target.value)}
             />
+            <Form.Control
+              type="text"
+              name="username"
+              placeholder="Enter Username"
+              onChange={(e) => setUsername(e.target.value)}
+            />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -44,16 +54,25 @@ const SignupForm2 = (props) => {
               type="password"
               name="password"
               placeholder="Password"
-              onChange={(e) => setPassword({...password, password:e.target.value})}
+              onChange={(e) =>
+                setPassword({ ...password, password: e.target.value })
+              }
             />
             <Form.Control
               type="password"
               name="password2"
               placeholder="Confirm Password"
-              onChange={(e) => setPassword({...password ,password2:e.target.value})}
+              onChange={(e) =>
+                setPassword({ ...password, password2: e.target.value })
+              }
             />
           </Form.Group>
-          <Button variant="primary" type="submit" onClick={onClickHandler}>
+          <Button
+            variant="primary"
+            type="submit"
+            onClick={onClickHandler}
+            className="submit-button"
+          >
             Submit
           </Button>
         </Form>
