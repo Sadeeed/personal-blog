@@ -3,11 +3,11 @@ import ArticleList from "../../components/Card/ArticleList";
 import Footer from "../../components/Footer/Footer";
 import SidebarLeft from "../../components/Sidebar/SidebarLeft";
 import SidebarRight from "../../components/Sidebar/SidebarRight";
-import { posts } from "../../assets/js/posts";
+// import { posts } from "../../assets/js/posts";
 import { getPosts } from "../../service/api";
 
 const LandingPage = () => {
-  const [article, setArticle] = useState(posts);
+  const [article, setArticle] = useState();
 
   useEffect((res) => {
     getPosts().then((response) => {

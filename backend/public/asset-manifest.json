@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.93803cd4.css",
+    "main.js": "/static/js/main.40e32cee.js",
+    "static/js/787.dfb08324.chunk.js": "/static/js/787.dfb08324.chunk.js",
+    "static/media/avatar_sadeed.jpg": "/static/media/avatar_sadeed.a655862038bf60092b35.jpg",
+    "static/media/card-header.jpg": "/static/media/card-header.817146d15a24068f0bbe.jpg",
+    "index.html": "/index.html",
+    "main.93803cd4.css.map": "/static/css/main.93803cd4.css.map",
+    "main.40e32cee.js.map": "/static/js/main.40e32cee.js.map",
+    "787.dfb08324.chunk.js.map": "/static/js/787.dfb08324.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.93803cd4.css",
+    "static/js/main.40e32cee.js"
+  ]
+}
