@@ -11,7 +11,7 @@ import session from "express-session";
 import { cfg } from "./config.js";
 
 const app = express();
-const port = 5000;
+const port = 8080;
 
 const uri = 'mongodb+srv://icesoup:pegasis8@aloo.e7een.mongodb.net/?retryWrites=true&w=majority'
 // const uri =
