@@ -24,7 +24,7 @@ const MainArticle = (props) => {
           </Link>
         </div>
         <div className="article-details">
-          <header className="article-category">
+          {/* <header className="article-category">
             <Link
               to="/categories/test/"
               style={{ backgroundColor: "#2a9d8f", color: "#fff" }}
@@ -34,7 +34,7 @@ const MainArticle = (props) => {
             <Link to="/categories/test-with-whitespaces/">
               Test with whitespaces
             </Link>
-          </header>
+          </header> */}
           <div className="article-title-wrapper">
             <h2 className="article-title">
               <Link to={path} state={props.data}>
@@ -61,11 +61,11 @@ const MainArticle = (props) => {
         <ReactMarkdown children={props.content} remarkPlugins={[remarkGfm]} />
       </section>
       <footer className="article-footer">
-        <section className="article-tags">
+        {/* <section className="article-tags">
           <Link to="/tags/markdown/">markdown</Link>
           <Link to="/tags/text/">text</Link>
           <Link to="/tags/tag-with-whitespaces/">tag with whitespaces</Link>
-        </section>
+        </section> */}
         <section className="article-copyright">
           <Copyright size={24} strokeWidth={2} />
           <span>Licensed under CC BY-NC-SA 4.0</span>

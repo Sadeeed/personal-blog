@@ -15,10 +15,10 @@ const PostCard2 = (props) => {
           </Link>
         </div>
         <div className="article-details">
-          <header className="article-category">
+          {/* <header className="article-category">
             <Link to="/categories/themes/">themes</Link>
             <Link to="/categories/syntax/">syntax</Link>
-          </header>
+          </header> */}
           <div className="article-title-wrapper">
             <h2 className="article-title">
               <Link to={post_link} state={props.data}>{props.title}</Link>
