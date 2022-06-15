@@ -19,7 +19,6 @@ const PostPage = (props) => {
   useEffect((res) => {
     getPost(article).then((response) => {
       res = setArticle(response.data)
-      console.log(article)
     })
   }, [article])
 
