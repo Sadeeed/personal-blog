@@ -2,7 +2,6 @@ import articleModel from "../models/articleModel.js"
 import slugify from "slugify";
 
 export const getPosts = (req, res) => {
-  console.log("Getting posts")
   articleModel.find({}).exec((err, data) => {
     if (err) throw err
     res.json(data)
@@ -10,7 +9,6 @@ export const getPosts = (req, res) => {
 };
 
 export const getPost = (req, res) => {
-  console.log("get a post")
   articleModel.findOne({slug:req.params.slug}).exec((err, data) => {
     if (err) throw err
     res.json(data)
