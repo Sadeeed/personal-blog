@@ -4,12 +4,15 @@ import {
   getPosts,
   newPost,
   deletePost,
+  getPost,
 } from "../controllers/articleController.js";
-import {authenticate} from "../middleware/auth.js";
+import { authenticate } from "../middleware/auth.js";
 
 const router = express.Router();
 
 router.get("/", getPosts);
+
+router.get("/p/:slug", getPost);
 
 router.post("/n", authenticate(), newPost);
 

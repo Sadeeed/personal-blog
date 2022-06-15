@@ -3,16 +3,25 @@ import SidebarLeft from "../../components/Sidebar/SidebarLeft";
 import Footer from "../../components/Footer/Footer";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { deletePost } from "../../service/api";
+import { useEffect, useState } from "react";
+import { getPost } from "../../service/api";
 // import SidebarRightPost from "../../components/Sidebar/SidebarRightPost";
 
 const PostPage = (props) => {
   const location = useLocation();
-  const article = location.state;
+  const [article, setArticle] = useState(location.state)
 
   const edit_link = `/e/${article.slug}`
   const delete_link = `/d/${article.slug}`
 
   const navigate = useNavigate()
+
+  useEffect((res) => {
+    getPost(article).then((response) => {
+      res = setArticle(response.data)
+      console.log(article)
+    })
+  }, [article])
 
   async function handleDelete() {
     await deletePost(article, delete_link).then((res) => {

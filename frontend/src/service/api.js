@@ -11,6 +11,10 @@ export const getPosts = async () => {
     return await axios.get(`${url}/`)
 }
 
+export const getPost = async (article) => {
+    return await axios.get(`${url}/p/${article.slug}`)
+}
+
 export const addPost = async (article) => {
     return await axios.post(`${url}/n`, article)
 }

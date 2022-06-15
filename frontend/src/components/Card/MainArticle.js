@@ -26,12 +26,12 @@ const MainArticle = (props) => {
         <div className="article-details">
           <header className="article-category">
             <Link
-              to="/categories/test/"
+              to={path}
               style={{ backgroundColor: "#2a9d8f", color: "#fff" }}
             >
               Test
             </Link>
-            <Link to="/categories/test-with-whitespaces/">
+            <Link to={path}>
               Test with whitespaces
             </Link>
           </header>
@@ -62,9 +62,9 @@ const MainArticle = (props) => {
       </section>
       <footer className="article-footer">
         <section className="article-tags">
-          <Link to="/tags/markdown/">markdown</Link>
-          <Link to="/tags/text/">text</Link>
-          <Link to="/tags/tag-with-whitespaces/">tag with whitespaces</Link>
+          <Link to={path}>markdown</Link>
+          <Link to={path}>text</Link>
+          <Link to={path}>tag with whitespaces</Link>
         </section>
         <section className="article-copyright">
           <Copyright size={24} strokeWidth={2} />

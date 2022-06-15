@@ -16,8 +16,8 @@ const PostCard2 = (props) => {
         </div>
         <div className="article-details">
           <header className="article-category">
-            <Link to="/categories/themes/">themes</Link>
-            <Link to="/categories/syntax/">syntax</Link>
+            <Link to="/">themes</Link>
+            <Link to="/">syntax</Link>
           </header>
           <div className="article-title-wrapper">
             <h2 className="article-title">
