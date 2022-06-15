@@ -35,7 +35,7 @@ function App() {
       <Route path="/n" element={<AddPost />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      {/* <Route path="/dashboard" element={<Dashboard />} /> */}
     </Routes>
   );
 }

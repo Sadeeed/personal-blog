@@ -40,3 +40,5 @@ export const posts = [
     status: true,
   },
 ];
+
+export const about = "Hello! My name is Sadeed and I enjoy creating things that live on the internet. My interest in computers and programming started back in 2009 when I decided to  make my own PSP hombrew game turns out hacking together a custom game taught me alot about proagmming and computers.\n\n# Skills\n- Python / Django / Flask\n- Javascript / Node / Express / React\n- Databse / Mongo / Postgres / SQLite\n- Embedded Systems / Arduino"
