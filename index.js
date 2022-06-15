@@ -9,17 +9,25 @@ import localStrategy from "passport-local";
 import userModel from "./models/userModel.js";
 import session from "express-session";
 import { cfg } from "./config.js";
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 5000;
 
-const uri = 'mongodb+srv://icesoup:pegasis8@aloo.e7een.mongodb.net/?retryWrites=true&w=majority'
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const uri =
+  "mongodb+srv://icesoup:pegasis8@aloo.e7een.mongodb.net/?retryWrites=true&w=majority";
 // const uri =
 //   "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000";
 
 mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("connected"));
+
+app.use(express.static(path.join(__dirname, "frontend", "build")));
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
@@ -45,6 +53,9 @@ passport.deserializeUser(userModel.deserializeUser());
 
 app.use("/api", articleRouter);
 app.use("/api/auth", authRouter);
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
+});
 
 // app.get('/', (req, res) => {
 //   res.send(`Hello World!`)

@@ -1,7 +1,7 @@
 import axios from "axios"
 
 
-const url = "http://localhost:8080/api"
+const url = "http://localhost:5000/api"
 
 export const setToken = (token) => {
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;

@@ -7,8 +7,9 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js --ignore admin",
-    "heroku-postbuild": "cd frontend && npm install && npm run build"
+    "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
   },
+  "engines": {"node": "18.3.0"},
   "author": "sadeeed",
   "license": "GPL-3.0-or-later",
   "dependencies": {
