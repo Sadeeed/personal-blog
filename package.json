@@ -5,11 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "cd frontend && npm run build",
-    "install-client": "cd frontend && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build",
-    "server": "nodemon index.js",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\""
+    "start": "node index.js",
+    "dev": "nodemon index.js --ignore admin",
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
   },
   "author": "sadeeed",
   "license": "GPL-3.0-or-later",
