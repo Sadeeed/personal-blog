@@ -16,6 +16,7 @@ const LoginForm = (props) => {
       if (res.data.status === 200) {
         alert(JSON.stringify(res.data.token));
         setToken(res.data.token)
+        localStorage.setItem('jwt', res.data.token)
         navigate("/");
       }
     });

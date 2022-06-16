@@ -124,6 +124,12 @@ const SidebarLeft = (props) => {
             <span>Login</span>
           </Link>
         </li>
+        <li className={path === "/sigup/" ? "current" : ""}>
+          <Link to="/signup/">
+            <Login size={24} strokeWidth={2} />
+            <span>Signup</span>
+          </Link>
+        </li>
         <li className={path === "/n/" ? "current" : ""}>
           <Link to="/n/">
             <Plus size={24} strokeWidth={2} />
